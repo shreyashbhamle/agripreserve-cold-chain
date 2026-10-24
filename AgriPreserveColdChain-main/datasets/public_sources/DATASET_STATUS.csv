@@ -1,0 +1,15 @@
+dataset_name,domain,source_type,source_url,update_frequency,bundled_in_zip,notes
+Project sensor_readings,IoT telemetry,synthetic demo,../synthetic/sensor_readings.csv,static demo,yes,Not real-time device readings
+Project shipments,shipment logistics,synthetic demo,../synthetic/shipments.csv,static demo,yes,Replace with operational records
+Project alerts,alerts,synthetic demo,../synthetic/alerts.csv,static demo,yes,Demo alerts only
+Project produce quality labels,computer vision metadata,synthetic metadata,../synthetic/produce_quality_labels.csv,static demo,yes,No image files included
+Project market prices,market analytics,synthetic demo,../synthetic/market_prices_demo.csv,static demo,yes,Not official market prices
+Project storage facilities,facility analytics,synthetic demo,../synthetic/storage_facilities.csv,static demo,yes,Demo facilities
+Cold storage room monitoring,temperature humidity,historical public experiment,https://zenodo.org/records/15130001,static historical dataset,no,Downloader script included; requires internet
+Ambient-loaded citrus in refrigerated containers,transport temperature,historical public experiment,https://data.mendeley.com/datasets/mvr7m6mcgp,static historical dataset,no,Download All on source page
+Fresh and stale fruit and vegetable images,computer vision,public image dataset,https://www.kaggle.com/datasets/raghavrpotdar/fresh-and-stale-images-of-fruits-and-vegetables,static dataset,no,Large; requires Kaggle CLI/credentials
+AGMARKNET daily mandi prices,market prices,official government data,https://www.data.gov.in/catalog/current-daily-price-various-commodities-various-markets-mandi,daily,no,API key may be required
+District season-wise crop production,agriculture context,official government data,https://www.data.gov.in/catalog/district-wise-season-wise-crop-production-statistics-0,periodic,no,Historical/periodic statistics
+Open-Meteo weather,weather,live public API,https://open-meteo.com/en/docs,current/forecast,no,Fetcher script included; internet required
+OpenStreetMap map data,mapping,public map service,https://www.openstreetmap.org/,updated map service,no,Not vehicle telemetry
+Live truck GPS and sensors,IoT telemetry,own device required,ESP32/mobile GPS/telematics,live,no,Must be collected from deployed devices

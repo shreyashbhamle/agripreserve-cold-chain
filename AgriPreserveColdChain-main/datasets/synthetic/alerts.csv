@@ -1,0 +1,5 @@
+alert_id,shipment_id,timestamp,severity,type,message,status
+AL001,AP1024,2026-10-16T11:00:00+05:30,High,Temperature,Temperature above configured example range.,Open
+AL002,AP1026,2026-10-16T11:30:00+05:30,High,Reefer health,Cooling-unit status requires inspection.,Open
+AL003,AP1025,2026-10-16T10:30:00+05:30,Medium,Humidity,Humidity trend needs monitoring.,Acknowledged
+AL004,AP1028,2026-10-15T14:00:00+05:30,Low,Delivery,Delivery recorded successfully.,Closed

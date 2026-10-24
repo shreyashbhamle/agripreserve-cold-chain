@@ -1,0 +1,5 @@
+facility_id,name,location,capacity_mt,current_load_mt,temperature_c,status
+CS-NASHIK,Nashik Storage,"Nashik, Maharashtra",1000,650,4.2,Normal
+CS-PUNE,Pune Storage,"Pune, Maharashtra",800,720,5.1,Normal
+CS-MUMBAI,Mumbai Storage,"Mumbai, Maharashtra",1200,900,6.4,Warning
+CS-AURANGABAD,Aurangabad Storage,"Chhatrapati Sambhajinagar, Maharashtra",600,450,4.8,Normal

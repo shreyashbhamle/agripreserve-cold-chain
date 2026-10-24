@@ -1,0 +1,11 @@
+image_id,product,label,image_path,source_type,notes
+IMG001,Mangoes,Fresh,REPLACE_WITH_REAL_IMAGE_PATH,placeholder_label_only,No image file included; use only as sample label metadata.
+IMG002,Mangoes,Minor Defect,REPLACE_WITH_REAL_IMAGE_PATH,placeholder_label_only,No image file included; use only as sample label metadata.
+IMG003,Tomatoes,Fresh,REPLACE_WITH_REAL_IMAGE_PATH,placeholder_label_only,No image file included; use only as sample label metadata.
+IMG004,Grapes,Fresh,REPLACE_WITH_REAL_IMAGE_PATH,placeholder_label_only,No image file included; use only as sample label metadata.
+IMG005,Bananas,Fresh,REPLACE_WITH_REAL_IMAGE_PATH,placeholder_label_only,No image file included; use only as sample label metadata.
+IMG006,Mangoes,Damaged,REPLACE_WITH_REAL_IMAGE_PATH,placeholder_label_only,No image file included; use only as sample label metadata.
+IMG007,Leafy Greens,Fresh,REPLACE_WITH_REAL_IMAGE_PATH,placeholder_label_only,No image file included; use only as sample label metadata.
+IMG008,Strawberries,Minor Defect,REPLACE_WITH_REAL_IMAGE_PATH,placeholder_label_only,No image file included; use only as sample label metadata.
+IMG009,Pomegranates,Fresh,REPLACE_WITH_REAL_IMAGE_PATH,placeholder_label_only,No image file included; use only as sample label metadata.
+IMG010,Tomatoes,Damaged,REPLACE_WITH_REAL_IMAGE_PATH,placeholder_label_only,No image file included; use only as sample label metadata.

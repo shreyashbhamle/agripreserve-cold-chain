@@ -1,0 +1,507 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #ecfdf5;
+  --color-primary-100: #d1fae5;
+  --color-primary-200: #a7f3d0;
+  --color-primary-300: #6ee7b7;
+  --color-primary-400: #34d399;
+  --color-primary-500: #10b981;
+  --color-primary-600: #059669;
+  --color-primary-700: #047857;
+  --color-primary-800: #065f46;
+  --color-primary-900: #064e3b;
+  --color-primary-950: #022c22;
+
+  --color-danger: #dc2626;
+  --color-warning: #f59e0b;
+  --color-info: #2563eb;
+  --color-success: #16a34a;
+
+  --color-dashboard: #f8fafc;
+  --color-sidebar: #022c22;
+}
+
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+/* Agri Preserve visual refresh: calm agricultural gradients and glass surfaces. */
+body {
+  background:
+    radial-gradient(circle at 7% 4%, rgba(16, 185, 129, 0.09), transparent 26rem),
+    radial-gradient(circle at 92% 8%, rgba(59, 130, 246, 0.07), transparent 24rem),
+    #f5f8f7;
+}
+
+.login-scene {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(125deg, rgba(2, 44, 34, 0.95), rgba(5, 92, 69, 0.88) 48%, rgba(13, 76, 91, 0.9)),
+    #064e3b;
+}
+.login-scene::before,
+.login-scene::after {
+  position: absolute;
+  content: "";
+  width: 28rem;
+  height: 28rem;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 42% 58% 61% 39% / 40% 44% 56% 60%;
+  pointer-events: none;
+  animation: orbit-float 18s ease-in-out infinite alternate;
+}
+.login-scene::before { top: -13rem; left: -9rem; box-shadow: 0 0 0 35px rgba(255,255,255,.025), 0 0 0 75px rgba(255,255,255,.02); }
+.login-scene::after { right: -12rem; bottom: -15rem; animation-delay: -5s; }
+.login-card {
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255,255,255,.55);
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 28px 90px rgba(0, 15, 10, .28), 0 3px 12px rgba(0,0,0,.06);
+  backdrop-filter: blur(18px);
+  animation: card-rise .6s cubic-bezier(.2,.8,.2,1) both;
+}
+.brand-mark {
+  color: #047857;
+  background: linear-gradient(145deg, #d1fae5, #ecfdf5);
+  box-shadow: inset 0 0 0 1px rgba(5,150,105,.12);
+}
+.role-tile { transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.role-tile:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(15, 118, 84, .08); }
+.login-submit { box-shadow: 0 8px 18px rgba(5,150,105,.22); transition: transform .18s ease, box-shadow .18s ease; }
+.login-submit:hover { transform: translateY(-1px); box-shadow: 0 12px 24px rgba(5,150,105,.28); }
+@keyframes orbit-float { from { transform: rotate(-8deg) translateY(-5px); } to { transform: rotate(12deg) translateY(18px); } }
+@keyframes card-rise { from { opacity: 0; transform: translateY(12px) scale(.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+
+/* Agri Preserve visual system: role-aware cold-chain dashboards */
+.dashboard-scene {
+  --role-accent: #059669;
+  --role-accent-rgb: 5, 150, 105;
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  background: #f4f8f6;
+}
+.dashboard-scene::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 84% 8%, rgba(var(--role-accent-rgb), .13), transparent 31rem),
+    radial-gradient(ellipse at 10% 90%, rgba(14, 116, 144, .08), transparent 30rem),
+    linear-gradient(135deg, #f8fbf9 0%, #f1f7f5 50%, #f8fafc 100%);
+}
+.dashboard-scene[data-role="admin"] { --role-accent: #0f766e; --role-accent-rgb: 15, 118, 110; }
+.dashboard-scene[data-role="farmer"] { --role-accent: #15803d; --role-accent-rgb: 21, 128, 61; }
+.dashboard-scene[data-role="driver"] { --role-accent: #ea580c; --role-accent-rgb: 234, 88, 12; }
+.dashboard-scene[data-role="receiver"] { --role-accent: #7c3aed; --role-accent-rgb: 124, 58, 237; }
+.dashboard-scene main { position: relative; }
+.dashboard-scene main > div { animation: dashboard-enter .42s ease-out both; }
+.dashboard-scene .bg-white {
+  background-color: rgba(255, 255, 255, .88);
+  backdrop-filter: blur(10px);
+}
+.dashboard-scene .rounded-2xl.border,
+.dashboard-scene .rounded-xl.border {
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.dashboard-scene .rounded-2xl.border:hover {
+  border-color: rgba(var(--role-accent-rgb), .25);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, .055);
+}
+.dashboard-scene main h1 { letter-spacing: -.035em; }
+.dashboard-scene main button.bg-emerald-600,
+.dashboard-scene main a.bg-emerald-600 {
+  background: linear-gradient(135deg, var(--role-accent), color-mix(in srgb, var(--role-accent), #0f172a 12%));
+}
+.login-scene {
+  background:
+    radial-gradient(ellipse at 12% 82%, rgba(16, 185, 129, .28), transparent 28rem),
+    radial-gradient(ellipse at 84% 12%, rgba(56, 189, 248, .22), transparent 27rem),
+    linear-gradient(128deg, #031f1a 0%, #064e3b 48%, #0f3c46 100%);
+}
+.login-scene::before { border-radius: 48% 52% 39% 61% / 44% 37% 63% 56%; }
+.login-scene::after { border-radius: 57% 43% 62% 38% / 38% 57% 43% 62%; }
+.login-card { box-shadow: 0 30px 100px rgba(0, 15, 10, .34), 0 4px 18px rgba(0,0,0,.08); }
+@keyframes dashboard-enter { from { opacity: .7; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 640px) {
+  .dashboard-scene main { padding-bottom: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-scene main > div { animation: none; }
+}
+
+.login-scene[data-role="admin"] {
+  background: radial-gradient(ellipse at 12% 82%, rgba(14, 165, 233, .28), transparent 28rem), radial-gradient(ellipse at 84% 12%, rgba(59, 130, 246, .25), transparent 27rem), linear-gradient(128deg, #06172f, #123e72 52%, #082f49);
+}
+.login-scene[data-role="farmer"] {
+  background: radial-gradient(ellipse at 12% 82%, rgba(132, 204, 22, .25), transparent 28rem), radial-gradient(ellipse at 84% 12%, rgba(16, 185, 129, .24), transparent 27rem), linear-gradient(128deg, #092b20, #166534 52%, #14532d);
+}
+.login-scene[data-role="driver"] {
+  background: radial-gradient(ellipse at 12% 82%, rgba(251, 146, 60, .28), transparent 28rem), radial-gradient(ellipse at 84% 12%, rgba(249, 115, 22, .22), transparent 27rem), linear-gradient(128deg, #321a0b, #9a3412 52%, #431407);
+}
+.login-scene[data-role="receiver"] {
+  background: radial-gradient(ellipse at 12% 82%, rgba(192, 132, 252, .27), transparent 28rem), radial-gradient(ellipse at 84% 12%, rgba(139, 92, 246, .24), transparent 27rem), linear-gradient(128deg, #1e123b, #5b21b6 52%, #312e81);
+}
+
+/* Premium Agri Preserve login experience */
+.login-scene-premium {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(430px, .88fr);
+  min-height: 100vh;
+  overflow: hidden;
+  background: #061b31;
+}
+.login-scene-premium::before, .login-scene-premium::after { display: none; }
+.login-art-panel {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(2rem, 4vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+  background-image: linear-gradient(90deg, rgba(2,18,38,.22), rgba(2,18,38,.10)), url('/images/agri-coldchain-hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.login-art-panel::before { content: ""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(2,20,42,.55) 0%,rgba(2,20,42,.12) 45%,rgba(2,20,42,.12) 100%); }
+.login-brand-lockup, .mobile-brand { display:flex; align-items:center; gap:14px; }
+.login-brand-lockup .brand-mark, .mobile-brand .brand-mark { width:58px;height:58px;display:grid;place-items:center;border-radius:19px;background:linear-gradient(145deg,#c6ff7b,#14d7a0);color:#064e3b;box-shadow:0 0 35px #22c55e55; }
+.brand-name { color:#111c32;font-size:clamp(1.45rem,2.1vw,2.1rem);font-weight:850;letter-spacing:-.055em;line-height:1.1; }
+.login-brand-lockup .brand-name { color:white; }
+.brand-name span { color:#10b981; }
+.brand-tagline { margin-top:5px;color:#64748b;font-size:10px;font-weight:700;letter-spacing:.22em; }
+.login-brand-lockup .brand-tagline { color:#d5e8f6; }
+.login-hero-copy { margin-top:clamp(3.5rem,8vh,7rem);max-width:760px; }
+.login-hero-copy .eyebrow { display:flex;align-items:center;gap:8px;color:#a7f3d0;font-size:11px;font-weight:800;letter-spacing:.18em; }
+.login-hero-copy h2 { margin:17px 0 12px;color:white;font-size:clamp(2.5rem,4.3vw,5rem);font-weight:900;letter-spacing:-.065em;line-height:1.02;text-shadow:0 4px 30px #00152d55; }
+.login-hero-copy h2 span { color:#6df0b6; }
+.login-hero-copy > p:last-child { max-width:600px;color:#e1edf7;font-size:clamp(1rem,1.35vw,1.25rem);line-height:1.65; }
+.login-feature-row { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.5vw,24px);max-width:760px;margin-top:clamp(2.2rem,5vh,4.2rem); }
+.login-feature { display:flex;align-items:center;gap:12px;min-width:0;padding:13px 12px;border:1px solid #ffffff24;border-radius:17px;background:#061b315c;backdrop-filter:blur(12px); }
+.feature-icon { display:grid;place-items:center;flex-shrink:0;width:44px;height:44px;border-radius:15px; }
+.feature-icon svg { width:22px;height:22px; }
+.feature-icon.mint { color:#6df0b6;background:#10b9812e;box-shadow:inset 0 0 0 1px #6df0b655; }
+.feature-icon.cyan { color:#67e8f9;background:#06b6d42b;box-shadow:inset 0 0 0 1px #67e8f955; }
+.feature-icon.violet { color:#d8b4fe;background:#a855f72b;box-shadow:inset 0 0 0 1px #d8b4fe55; }
+.login-feature b,.login-feature small { display:block; }
+.login-feature b { color:white;font-size:13px; }
+.login-feature small { margin-top:4px;color:#d2e1ef;font-size:10px;line-height:1.4; }
+.login-route-chip { position:absolute;display:flex;align-items:center;gap:9px;padding:10px 14px;border:1px solid #b6ffe64f;border-radius:13px;background:#052b36c9;color:white;font-size:12px;font-weight:700;box-shadow:0 12px 30px #00152d40;backdrop-filter:blur(12px); }
+.login-route-chip span { width:9px;height:9px;border-radius:50%;background:#6df0b6;box-shadow:0 0 13px #6df0b6; }
+.chip-one { left:31%;bottom:29%; }.chip-two { left:48%;bottom:20%; }.chip-three { right:6%;bottom:30%; }
+.login-art-footer { display:flex;align-items:center;gap:9px;margin-top:auto;padding-top:2.5rem;color:#e0f2fe;font-size:12px;font-weight:600; }
+.login-form-panel { display:flex;align-items:center;justify-content:center;padding:clamp(18px,3vw,48px);background:radial-gradient(ellipse at 100% 0%,#c8f9df 0%,transparent 38%),linear-gradient(145deg,#edf9f4,#f7fbff 55%,#eaf2ff); }
+.login-card-premium { width:100%;max-width:510px;padding:clamp(22px,2.5vw,38px);border:1px solid #ffffffd9;border-radius:30px;background:rgba(255,255,255,.84);box-shadow:0 28px 85px #062a3024,inset 0 1px 0 #fff;backdrop-filter:blur(24px); }
+.login-card-premium > .mb-6 { display:none; }
+.login-card-premium .mobile-brand { display:none; }
+.login-welcome { display:flex;align-items:center;gap:13px;margin-bottom:24px; }
+.welcome-icon { display:grid;place-items:center;flex-shrink:0;width:54px;height:54px;border-radius:18px;color:#047857;background:linear-gradient(145deg,#d1fae5,#f0fdf4);box-shadow:inset 0 0 0 1px #10b98128; }
+.welcome-kicker { margin:0 0 5px;color:#059669;font-size:9px;font-weight:850;letter-spacing:.15em; }
+.login-welcome h1 { color:#0f172a;font-size:clamp(1.15rem,1.55vw,1.55rem);font-weight:850;letter-spacing:-.04em;line-height:1.2; }
+.login-welcome p:last-child { margin-top:5px;color:#64748b;font-size:12px; }
+.role-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px; }
+.role-tile { position:relative;display:flex;align-items:center;gap:11px;min-height:58px;padding:12px 14px;border:1px solid #dbe5ed;border-radius:15px;background:#ffffffb8;color:#475569;text-align:left;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease; }
+.role-tile svg { color:var(--tile-color); }
+.role-tile span:not(.role-selected-dot) { font-size:13px;font-weight:750; }
+.role-tile:hover { transform:translateY(-2px);border-color:var(--tile-color);box-shadow:0 8px 18px #0f172a0b; }
+.role-tile.active { border-color:var(--tile-color);background:color-mix(in srgb,var(--tile-color) 9%,white);color:#102238;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--tile-color) 25%,transparent),0 8px 18px color-mix(in srgb,var(--tile-color) 12%,transparent); }
+.role-selected-dot { position:absolute;top:9px;right:9px;width:7px;height:7px;border-radius:50%;background:var(--tile-color);box-shadow:0 0 0 3px color-mix(in srgb,var(--tile-color) 15%,transparent); }
+.role-hint { display:flex;align-items:center;gap:7px;margin:13px 0 18px;color:var(--role-accent);font-size:11px;font-weight:700; }
+.login-fields { display:grid;gap:12px; }
+.login-input-wrap { display:flex;align-items:center;gap:11px;height:52px;padding:0 14px;border:1px solid #dbe5ed;border-radius:14px;background:#ffffffd9;color:#64748b;transition:border .18s,box-shadow .18s; }
+.login-input-wrap:focus-within { border-color:var(--role-accent);box-shadow:0 0 0 4px rgba(var(--role-accent-rgb),.09); }
+.login-input-wrap input { width:100%;min-width:0;border:0;outline:0;background:transparent;color:#172033;font-size:13px; }
+.login-input-wrap input::placeholder { color:#94a3b8; }
+.password-toggle { display:grid;place-items:center;padding:5px;color:#718096; }
+.login-submit-premium { display:flex;align-items:center;justify-content:center;gap:10px;height:54px;border:0;background:linear-gradient(100deg,#22c55e,#059669 55%,#047857);box-shadow:0 12px 25px #05966935;font-size:14px;letter-spacing:.01em; }
+.login-submit-premium:hover { background:linear-gradient(100deg,#16a34a,#047857); }
+.login-submit-premium:disabled { opacity:.7;cursor:wait;transform:none; }
+.login-error { padding:10px 12px;border:1px solid #fecaca;border-radius:12px;background:#fef2f2;color:#b91c1c;font-size:12px; }
+.demo-access { margin-top:20px;padding:15px;border:1px solid #e4eee9;border-radius:16px;background:linear-gradient(120deg,#f2fbf6,#f8fbff); }
+.demo-access-top { display:flex;align-items:center;gap:10px; }.demo-shield { display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:#d1fae5;color:#047857; }
+.demo-access-top b,.demo-access-top small { display:block; }.demo-access-top b { color:#172033;font-size:12px; }.demo-access-top small { margin-top:3px;color:#64748b;font-size:10px; }
+.demo-credentials { display:flex;flex-wrap:wrap;gap:8px;margin-top:12px; }.demo-credentials span { display:flex;align-items:center;gap:5px;padding:7px 9px;border:1px solid #e0e9e5;border-radius:9px;background:white;color:#475569;font-size:10px; }
+.login-privacy { margin-top:17px;text-align:center;color:#94a3b8;font-size:10px; }.login-privacy span { padding:0 5px;color:#10b981; }
+.quality-camera-banner { background:radial-gradient(ellipse at 100% 0%,#d1fae5 0%,transparent 42%),linear-gradient(120deg,#f0fdf4,#fff 60%,#eff6ff); }
+.dashboard-scene::before { background-image:radial-gradient(ellipse at 84% 8%,rgba(var(--role-accent-rgb),.14),transparent 31rem),radial-gradient(ellipse at 10% 90%,rgba(14,116,144,.09),transparent 30rem),linear-gradient(135deg,#f8fbf9 0%,#f1f7f5 50%,#f8fafc 100%),url('/images/agri-coldchain-hero.jpg');background-repeat:no-repeat;background-size:auto,auto,auto, min(55vw,780px) auto;background-position:center,center,center,right bottom;background-blend-mode:normal; }
+.dashboard-scene[data-role="admin"]::before { background-color:#eff6ff; }
+.dashboard-scene[data-role="farmer"]::before { background-color:#f0fdf4; }
+.dashboard-scene[data-role="driver"]::before { background-color:#fff7ed; }
+.dashboard-scene[data-role="receiver"]::before { background-color:#f5f3ff; }
+@media (max-width: 1050px) { .login-scene-premium { grid-template-columns:minmax(0,1fr) minmax(390px,.9fr); }.login-art-panel { padding:2rem; }.login-feature-row { grid-template-columns:1fr;max-width:350px;margin-top:2rem; }.login-feature { padding:9px 11px; }.login-feature small { display:inline; }.login-route-chip { display:none; }.login-hero-copy { margin-top:4rem; } }
+@media (max-width: 760px) { .login-scene-premium { display:block; }.login-art-panel { min-height:330px;padding:24px;background-position:center 45%; }.login-hero-copy { margin-top:35px; }.login-hero-copy h2 { font-size:2.45rem; }.login-hero-copy > p:last-child { font-size:14px; }.login-feature-row { display:none; }.login-art-footer { display:none; }.login-form-panel { padding:18px 14px 28px; }.login-card-premium { max-width:560px;padding:23px;border-radius:24px; }.login-card-premium .mobile-brand { display:flex;margin-bottom:22px; }.login-card-premium .mobile-brand .brand-mark { width:43px;height:43px;border-radius:14px; }.login-card-premium .mobile-brand .brand-name { font-size:1.25rem; }.login-card-premium .mobile-brand .brand-tagline { font-size:8px; }.login-welcome { display:none; }.role-grid { gap:8px; }.role-tile { min-height:53px;padding:10px; }.dashboard-scene::before { background-size:auto,auto,auto,100% auto;background-position:center,center,center,right bottom;opacity:.7; } }
+
+
+/* October 2026 login polish: clean artwork, concise copy, calmer hierarchy. */
+.login-art-panel {
+  background-image: linear-gradient(90deg, rgba(2,18,38,.32), rgba(2,18,38,.04)), url('/images/agri-coldchain-hero.jpg');
+  background-position: center;
+}
+.login-hero-copy { margin-top: clamp(3rem, 7vh, 5.5rem); max-width: 650px; }
+.login-hero-copy .eyebrow { letter-spacing: .12em; }
+.login-hero-copy h2 { max-width: 650px; font-size: clamp(2.7rem, 4.2vw, 4.65rem); line-height: .99; }
+.login-hero-copy > p:last-child { max-width: 510px; font-size: clamp(1rem, 1.2vw, 1.15rem); }
+.login-feature-row { max-width: 690px; margin-top: clamp(2rem, 4vh, 3rem); }
+.login-route-chip { display: none; }
+@media (max-width: 900px) {
+  .login-scene-premium { grid-template-columns: minmax(0, 1fr); }
+  .login-art-panel { min-height: auto; padding: 2rem clamp(1.25rem, 5vw, 3rem); }
+  .login-hero-copy { margin-top: 2.5rem; }
+  .login-feature-row { margin-top: 1.75rem; }
+  .login-art-footer { padding-top: 1.5rem; }
+  .login-form-panel { padding: 1.5rem 1rem 2rem; }
+}
+@media (max-width: 560px) {
+  .login-feature-row { grid-template-columns: 1fr; gap: 9px; }
+  .login-feature { padding: 10px 12px; }
+  .login-art-panel { background-position: 58% center; }
+  .login-hero-copy h2 { font-size: clamp(2.4rem, 10vw, 3.3rem); }
+}
+
+
+/* ==========================================================
+   AgriPreserve Dark Analytics Theme
+   Inspired by the user's dark analytics screenshot.
+   Applied through DashboardLayout so every Admin, Farmer,
+   Driver, and Receiver route shares the same visual system.
+   ========================================================== */
+.dashboard-scene {
+  color: #e5e7eb;
+  background: #0e1117 !important;
+  --dashboard-panel: #171b24;
+  --dashboard-panel-raised: #1d2330;
+  --dashboard-border: #303846;
+  --dashboard-muted: #9aa7ba;
+  --dashboard-text: #edf2f7;
+}
+.dashboard-scene::before {
+  background:
+    radial-gradient(ellipse at 84% 5%, rgba(var(--role-accent-rgb), .13), transparent 32rem),
+    radial-gradient(ellipse at 8% 95%, rgba(56, 189, 248, .06), transparent 28rem),
+    linear-gradient(145deg, #0e1117 0%, #111722 58%, #0e1117 100%) !important;
+}
+.dashboard-scene main {
+  color: var(--dashboard-text);
+}
+.dashboard-scene main h1,
+.dashboard-scene main h2,
+.dashboard-scene main h3,
+.dashboard-scene main h4,
+.dashboard-scene main .text-slate-900,
+.dashboard-scene main .text-slate-800,
+.dashboard-scene main .text-gray-900,
+.dashboard-scene main .text-gray-800 {
+  color: #f1f5f9 !important;
+}
+.dashboard-scene main .text-slate-700,
+.dashboard-scene main .text-slate-600,
+.dashboard-scene main .text-gray-700,
+.dashboard-scene main .text-gray-600 {
+  color: #c0cad8 !important;
+}
+.dashboard-scene main .text-slate-500,
+.dashboard-scene main .text-slate-400,
+.dashboard-scene main .text-gray-500,
+.dashboard-scene main .text-gray-400 {
+  color: #93a2b8 !important;
+}
+.dashboard-scene .bg-white,
+.dashboard-scene .bg-white\/95,
+.dashboard-scene .bg-white\/90,
+.dashboard-scene .bg-white\/80 {
+  background-color: rgba(23, 27, 36, .96) !important;
+  color: #e5e7eb;
+  backdrop-filter: blur(12px);
+}
+.dashboard-scene [class~="bg-slate-50"],
+.dashboard-scene [class~="bg-gray-50"],
+.dashboard-scene [class~="bg-slate-100"],
+.dashboard-scene [class~="bg-gray-100"] {
+  background-color: #202633 !important;
+  color: #e5e7eb;
+}
+.dashboard-scene [class~="bg-slate-200"],
+.dashboard-scene [class~="bg-gray-200"] {
+  background-color: #303846 !important;
+}
+.dashboard-scene [class~="border"],
+.dashboard-scene [class*="border-slate-"],
+.dashboard-scene [class*="border-gray-"] {
+  border-color: #303846 !important;
+}
+.dashboard-scene .shadow-sm,
+.dashboard-scene .shadow,
+.dashboard-scene .shadow-md {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .16) !important;
+}
+.dashboard-scene .rounded-2xl.border:hover,
+.dashboard-scene .rounded-xl.border:hover {
+  border-color: rgba(var(--role-accent-rgb), .48) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .25) !important;
+}
+.dashboard-scene aside {
+  background: #11151d !important;
+  border-color: #303846 !important;
+}
+.dashboard-scene aside .border-b,
+.dashboard-scene aside .border-t {
+  border-color: #303846 !important;
+}
+.dashboard-scene aside .text-slate-900,
+.dashboard-scene aside .text-slate-800 {
+  color: #f1f5f9 !important;
+}
+.dashboard-scene aside .text-slate-600,
+.dashboard-scene aside .text-slate-500 {
+  color: #a8b4c6 !important;
+}
+.dashboard-scene aside a:not(.bg-primary-50):hover {
+  background: #202633 !important;
+  color: #f8fafc !important;
+}
+.dashboard-scene aside a.bg-primary-50 {
+  background: rgba(var(--role-accent-rgb), .18) !important;
+  color: #d1fae5 !important;
+}
+.dashboard-scene aside .bg-slate-50 {
+  background: #1b202a !important;
+}
+.dashboard-scene header,
+.dashboard-scene [class*="bg-white/95"] {
+  background-color: rgba(17, 21, 29, .96) !important;
+  border-color: #303846 !important;
+}
+.dashboard-scene input,
+.dashboard-scene select,
+.dashboard-scene textarea {
+  background-color: #171d27 !important;
+  color: #e5e7eb !important;
+  border-color: #354052 !important;
+}
+.dashboard-scene input::placeholder,
+.dashboard-scene textarea::placeholder {
+  color: #8290a5 !important;
+}
+.dashboard-scene input:focus,
+.dashboard-scene select:focus,
+.dashboard-scene textarea:focus {
+  border-color: var(--role-accent) !important;
+}
+.dashboard-scene table thead,
+.dashboard-scene [class~="bg-slate-50"] {
+  background-color: #1a202b !important;
+}
+.dashboard-scene table tbody tr {
+  border-color: #2b3442 !important;
+}
+.dashboard-scene table tbody tr:hover {
+  background-color: #202633 !important;
+}
+.dashboard-scene hr {
+  border-color: #303846 !important;
+}
+.dashboard-scene .text-emerald-700,
+.dashboard-scene .text-green-700 {
+  color: #6ee7b7 !important;
+}
+.dashboard-scene .text-blue-700 {
+  color: #93c5fd !important;
+}
+.dashboard-scene .text-purple-700,
+.dashboard-scene .text-violet-700 {
+  color: #d8b4fe !important;
+}
+.dashboard-scene .text-orange-700,
+.dashboard-scene .text-amber-700 {
+  color: #fdba74 !important;
+}
+.dashboard-scene [class~="bg-emerald-50"],
+.dashboard-scene [class~="bg-green-50"] {
+  background-color: rgba(16, 185, 129, .13) !important;
+}
+.dashboard-scene [class~="bg-blue-50"] {
+  background-color: rgba(59, 130, 246, .14) !important;
+}
+.dashboard-scene [class~="bg-purple-50"],
+.dashboard-scene [class~="bg-violet-50"] {
+  background-color: rgba(139, 92, 246, .14) !important;
+}
+.dashboard-scene [class~="bg-orange-50"],
+.dashboard-scene [class~="bg-amber-50"] {
+  background-color: rgba(249, 115, 22, .14) !important;
+}
+.dashboard-scene [class~="bg-red-50"] {
+  background-color: rgba(239, 68, 68, .13) !important;
+}
+.dashboard-scene [class~="text-white"] {
+  color: #ffffff !important;
+}
+.dashboard-scene button:focus-visible,
+.dashboard-scene a:focus-visible {
+  outline: 2px solid var(--role-accent);
+  outline-offset: 2px;
+}
+@media (max-width: 640px) {
+  .dashboard-scene main {
+    padding-bottom: 1.5rem;
+  }
+}

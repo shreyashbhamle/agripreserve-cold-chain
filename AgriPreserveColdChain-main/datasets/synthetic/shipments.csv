@@ -1,0 +1,8 @@
+shipment_id,product,quantity_kg,origin,destination,status,eta,farmer,driver,receiver,safe_temp_min_c,safe_temp_max_c,shipment_value_inr
+AP1024,Mangoes,5000,Nashik,Mumbai,In Transit,2026-10-16T17:00:00+05:30,Rajesh Farmer,Amit Driver,FreshMart Mumbai,4,6,250000
+AP1025,Tomatoes,3000,Pune,Mumbai,In Transit,2026-10-16T16:00:00+05:30,Green Valley Farm,Amit Driver,FreshMart Mumbai,4,8,120000
+AP1026,Grapes,2000,Aurangabad,Pune,At Risk,2026-10-16T18:30:00+05:30,Sunrise Farms,Suresh Driver,City Produce Pune,2,6,180000
+AP1027,Leafy Greens,1500,Nashik,Pune,Scheduled,2026-10-17T09:00:00+05:30,Rajesh Farmer,Pending,Green Basket Pune,2,5,90000
+AP1028,Bananas,4000,Jalgaon,Mumbai,Delivered,2026-10-15T15:00:00+05:30,Fresh Fields,Amit Driver,FreshMart Mumbai,13,15,140000
+AP1029,Strawberries,900,Mahabaleshwar,Mumbai,In Transit,2026-10-16T19:00:00+05:30,Hill Berry Farm,Kiran Patil,Premium Foods Mumbai,0,4,210000
+AP1030,Pomegranates,2500,Solapur,Pune,Scheduled,2026-10-17T07:30:00+05:30,Deccan Orchards,Pending,City Produce Pune,5,10,160000

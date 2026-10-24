@@ -1,0 +1,76 @@
+date,market,product,price_inr_per_kg,source_type
+2026-10-01,Nashik APMC,Mangoes,144.83,synthetic_demo
+2026-10-01,Nashik APMC,Tomatoes,28.41,synthetic_demo
+2026-10-01,Nashik APMC,Grapes,98.65,synthetic_demo
+2026-10-01,Nashik APMC,Bananas,41.84,synthetic_demo
+2026-10-01,Nashik APMC,Leafy Greens,24.13,synthetic_demo
+2026-10-02,Nashik APMC,Mangoes,127.92,synthetic_demo
+2026-10-02,Nashik APMC,Tomatoes,34.63,synthetic_demo
+2026-10-02,Nashik APMC,Grapes,85.33,synthetic_demo
+2026-10-02,Nashik APMC,Bananas,35.83,synthetic_demo
+2026-10-02,Nashik APMC,Leafy Greens,25.87,synthetic_demo
+2026-10-03,Nashik APMC,Mangoes,129.7,synthetic_demo
+2026-10-03,Nashik APMC,Tomatoes,33.97,synthetic_demo
+2026-10-03,Nashik APMC,Grapes,92.2,synthetic_demo
+2026-10-03,Nashik APMC,Bananas,38.1,synthetic_demo
+2026-10-03,Nashik APMC,Leafy Greens,26.86,synthetic_demo
+2026-10-04,Nashik APMC,Mangoes,135.69,synthetic_demo
+2026-10-04,Nashik APMC,Tomatoes,33.57,synthetic_demo
+2026-10-04,Nashik APMC,Grapes,89.74,synthetic_demo
+2026-10-04,Nashik APMC,Bananas,38.34,synthetic_demo
+2026-10-04,Nashik APMC,Leafy Greens,24.28,synthetic_demo
+2026-10-05,Nashik APMC,Mangoes,142.65,synthetic_demo
+2026-10-05,Nashik APMC,Tomatoes,28.32,synthetic_demo
+2026-10-05,Nashik APMC,Grapes,99.74,synthetic_demo
+2026-10-05,Nashik APMC,Bananas,34.74,synthetic_demo
+2026-10-05,Nashik APMC,Leafy Greens,23.43,synthetic_demo
+2026-10-06,Nashik APMC,Mangoes,143.04,synthetic_demo
+2026-10-06,Nashik APMC,Tomatoes,33.14,synthetic_demo
+2026-10-06,Nashik APMC,Grapes,94.73,synthetic_demo
+2026-10-06,Nashik APMC,Bananas,38.79,synthetic_demo
+2026-10-06,Nashik APMC,Leafy Greens,23.65,synthetic_demo
+2026-10-07,Nashik APMC,Mangoes,135.69,synthetic_demo
+2026-10-07,Nashik APMC,Tomatoes,34.71,synthetic_demo
+2026-10-07,Nashik APMC,Grapes,98.59,synthetic_demo
+2026-10-07,Nashik APMC,Bananas,41.13,synthetic_demo
+2026-10-07,Nashik APMC,Leafy Greens,25.58,synthetic_demo
+2026-10-08,Nashik APMC,Mangoes,159.0,synthetic_demo
+2026-10-08,Nashik APMC,Tomatoes,33.91,synthetic_demo
+2026-10-08,Nashik APMC,Grapes,86.65,synthetic_demo
+2026-10-08,Nashik APMC,Bananas,34.85,synthetic_demo
+2026-10-08,Nashik APMC,Leafy Greens,21.2,synthetic_demo
+2026-10-09,Nashik APMC,Mangoes,137.03,synthetic_demo
+2026-10-09,Nashik APMC,Tomatoes,33.48,synthetic_demo
+2026-10-09,Nashik APMC,Grapes,85.66,synthetic_demo
+2026-10-09,Nashik APMC,Bananas,42.24,synthetic_demo
+2026-10-09,Nashik APMC,Leafy Greens,23.75,synthetic_demo
+2026-10-10,Nashik APMC,Mangoes,134.62,synthetic_demo
+2026-10-10,Nashik APMC,Tomatoes,28.24,synthetic_demo
+2026-10-10,Nashik APMC,Grapes,82.61,synthetic_demo
+2026-10-10,Nashik APMC,Bananas,34.84,synthetic_demo
+2026-10-10,Nashik APMC,Leafy Greens,24.29,synthetic_demo
+2026-10-11,Nashik APMC,Mangoes,133.4,synthetic_demo
+2026-10-11,Nashik APMC,Tomatoes,33.1,synthetic_demo
+2026-10-11,Nashik APMC,Grapes,92.78,synthetic_demo
+2026-10-11,Nashik APMC,Bananas,34.56,synthetic_demo
+2026-10-11,Nashik APMC,Leafy Greens,21.83,synthetic_demo
+2026-10-12,Nashik APMC,Mangoes,151.98,synthetic_demo
+2026-10-12,Nashik APMC,Tomatoes,29.76,synthetic_demo
+2026-10-12,Nashik APMC,Grapes,79.59,synthetic_demo
+2026-10-12,Nashik APMC,Bananas,40.55,synthetic_demo
+2026-10-12,Nashik APMC,Leafy Greens,22.38,synthetic_demo
+2026-10-13,Nashik APMC,Mangoes,147.37,synthetic_demo
+2026-10-13,Nashik APMC,Tomatoes,30.04,synthetic_demo
+2026-10-13,Nashik APMC,Grapes,88.53,synthetic_demo
+2026-10-13,Nashik APMC,Bananas,40.63,synthetic_demo
+2026-10-13,Nashik APMC,Leafy Greens,26.47,synthetic_demo
+2026-10-14,Nashik APMC,Mangoes,151.91,synthetic_demo
+2026-10-14,Nashik APMC,Tomatoes,34.4,synthetic_demo
+2026-10-14,Nashik APMC,Grapes,87.83,synthetic_demo
+2026-10-14,Nashik APMC,Bananas,42.19,synthetic_demo
+2026-10-14,Nashik APMC,Leafy Greens,25.77,synthetic_demo
+2026-10-15,Nashik APMC,Mangoes,151.51,synthetic_demo
+2026-10-15,Nashik APMC,Tomatoes,34.95,synthetic_demo
+2026-10-15,Nashik APMC,Grapes,88.22,synthetic_demo
+2026-10-15,Nashik APMC,Bananas,38.7,synthetic_demo
+2026-10-15,Nashik APMC,Leafy Greens,21.39,synthetic_demo
